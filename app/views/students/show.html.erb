@@ -1,0 +1,40 @@
+<div class="container">
+    <div class="row">
+        <div class="col-8">
+            <p>Student Detail</p>
+            <div>
+                <strong>Name:</strong>
+                <%= @student.name %>
+            </div>
+
+            <div>
+                <strong>Email:</strong>
+                <%= @student.email %>
+            </div>
+
+            <div>
+                <strong>City:</strong>
+                <%= @student.city %>
+            </div>
+
+            <div>
+                <strong>State:</strong>
+                <%= @student.state %>
+            </div>
+
+            <div>
+                <strong>country:</strong>
+                <%= @student.country %>
+            </div>
+
+            <div>
+                <strong>Contact:</strong>
+                <%= @student.contact %>
+            </div>
+        </div>
+    </div>
+
+    <div class="mt-3">
+       <%= link_to "Back", students_path, class: "btn btn-info" %>
+    <div>
+</div>

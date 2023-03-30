@@ -1,6 +1,6 @@
 <div class="container mt-3 mb-3">    
     <% @student.posts.each do |post| %>
-        <div data-controller="slideshow" data-slideshow-index-value="1">
+      <!-- <div data-controller="slideshow" data-slideshow-index-value="1">
             <% post.images.each_with_index do |image, index| %>              
                 <% if post.images.attached? %>             
                     <div data-slideshow-target="slide">   
@@ -10,6 +10,22 @@
             <% end %>
             <button data-action="slideshow#previous"> ← </button>
             <button data-action="slideshow#next"> → </button> 
+        </div> -->
+
+        <div class="relative" data-controller="carousel">
+            <% post.images.each_with_index do |image, idx| %>
+                <% if post.images.attached? %> 
+                    <div data-carousel-target="image" class="<%= idx > 0 ? "hidden" : nil %>">
+                        <%= image_tag(url_for(image), style: "width:100%; height:500px" ) %>
+                    </div>
+                <% end %>
+            <% end %>
+            <div class="absolute left-0 bottom-0 top-0 flex items-center">
+                <button data-action="carousel#previous" type="button" class="rounded-full bg-gray-300"> << </button>
+            </div>
+            <div class="absolute right-0 bottom-0 top-0 flex items-center">
+                <button data-action="carousel#next" type="button" class="rounded-full bg-gray-300"> >> </button>
+            </div>
         </div>
 
         <div class="mb-3">

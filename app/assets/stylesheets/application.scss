@@ -15,3 +15,12 @@
  */
  @import "bootstrap";
  @import "actiontext";
+
+
+ .clipboard-button {
+    display: none;
+  }
+  
+  .clipboard--supported .clipboard-button {
+    display: initial;
+  }

@@ -3,13 +3,12 @@ import { Controller } from "@hotwired/stimulus"
 // Connects to data-controller="slideshow"
 export default class extends Controller {
   static targets = ["slide"]
-  debugger 
-  static values = {index: Number}
+  static values = { index: { type: Number, default: 0 } }
   
   connect() {
   }
 
-  initialize(){
+  indexValueChanged(){
     this.showCurrentSlide()
   }
 

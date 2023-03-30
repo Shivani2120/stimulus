@@ -1,0 +1,34 @@
+<div id="<%= dom_id project %>">
+  <p>
+    <strong>Name:</strong>
+    <%= project.name %>
+  </p>
+
+  <p>
+    <strong>Description:</strong>
+    <%= project.description %>
+  </p>
+
+  <p>
+    <strong>Tasks:</strong>
+    <table class="table">
+      <thead class="table-dark">
+        <tr>
+          <th scope="col">Description</th>
+          <th scope="col">Completed Task</th>
+          <th scope="col">Action</th>
+        </tr>
+      </thead>
+      <tbody class="table-info">
+        <% project.tasks.each do |task| %>
+          <tr>
+            <td><%= task.description %></td>
+            <td><%= task.completed ? "True" : "False"%></td>
+            <td><%= link_to "See More", task %></td>
+          </tr>
+        <% end %>  
+      </tbody>
+    </table>
+  </p>
+
+</div>

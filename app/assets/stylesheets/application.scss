@@ -15,6 +15,8 @@
  */
  @import "bootstrap";
  @import "actiontext";
+ @import 'post';
+ @import 'project';
 
 
  .clipboard-button {
@@ -24,3 +26,5 @@
   .clipboard--supported .clipboard-button {
     display: initial;
   }
+
+ 

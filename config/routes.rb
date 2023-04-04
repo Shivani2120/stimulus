@@ -1,6 +1,8 @@
 Rails.application.routes.draw do
   resources :tasks
-  resources :projects
+  resources :projects do 
+    resources :comments
+  end
   get 'posts/create'
   get 'posts/destroy'
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html

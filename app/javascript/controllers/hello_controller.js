@@ -10,7 +10,7 @@ export default class extends Controller {
   greet() {
     const element = this.nameTarget.value
     document.getElementById("demo").innerHTML = `hello, ${element}`
-  // console.log(`Hello, ${this.name}!`)
+    // console.log(`Hello, ${this.name}!`)
   }
 
   get name() {

@@ -1,25 +1,25 @@
 import { Controller } from "@hotwired/stimulus"
-
+// import { SwiperOptions } from 'swiper'
+import Swiper from 'swiper/bundle'
 export default class extends Controller {
-    static targets = ["image"]
-    connect() {
-      this.index = 0
-      console.log("Connected")
+  
+    static values = {
+      options: object
     }
 
-    previous() {
-      if (this.index > 0) {
-        this.imageTargets[this.index].classList.add("hidden")
-        this.index -= 1
-        this.imageTargets[this.index].classList.remove("hidden")
-      }
+    connect(){
+      this.swiper = new Swiper(this.element, {
+        ...this.defaultOptions,
+        ...this.optionValue
+      })
     }
 
-    next() {
-      if (this.index < this.imageTargets.length - 1) {
-        this.imageTargets[this.index].classList.add("hidden")
-        this.index += 1
-        this.imageTargets[this.index].classList.remove("hidden")
-      }
+    disconnect(){
+      this.swiper.destroy()
+      this.swiper = undefined 
     }
-  }
+
+    get defaultOptions() {
+      return {}
+    }
+}

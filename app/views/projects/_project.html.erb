@@ -3,32 +3,33 @@
     <strong>Name:</strong>
     <%= project.name %>
   </p>
-
   <p>
     <strong>Description:</strong>
     <%= project.description %>
   </p>
-
-  <p>
-    <strong>Tasks:</strong>
-    <table class="table">
-      <thead class="table-dark">
-        <tr>
-          <th scope="col">Description</th>
-          <th scope="col">Completed Task</th>
-          <th scope="col">Action</th>
-        </tr>
-      </thead>
-      <tbody class="table-info">
+  
+  <div class="row">
+    <div data-controller="reveal" data-reveal-hidden-class="d-none">
+      <div class="col-1">
+        <button data-action="click->reveal#toggle" type="button" class="btn btn-outline-dark"><strong>Task:</strong></button>
+      </div>
+      <div class="col-11">
         <% project.tasks.each do |task| %>
-          <tr>
-            <td><%= task.description %></td>
-            <td><%= task.completed ? "True" : "False"%></td>
-            <td><%= link_to "See More", task %></td>
-          </tr>
+          <div class="row">
+            <div data-reveal-target="item" class="col-1 d-none">
+              <%= task.description.truncate(10, omission: '...') %>
+            </div>
+            <div data-reveal-target="item" class="col-1 d-none">  
+              <%= task.completed ? "True" : "False"%>
+            </div>
+            <div data-reveal-target="item" class="col-2 d-none">  
+              <%= link_to task_path(task) do %>
+                <i class="fa-solid fa-link bt"></i>
+              <% end %>  
+            </div>
+          </div>   
         <% end %>  
-      </tbody>
-    </table>
-  </p>
-
+      </div>
+    </div>  
+  </div>
 </div>

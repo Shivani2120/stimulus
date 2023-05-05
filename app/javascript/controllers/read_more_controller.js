@@ -2,7 +2,6 @@ import { Controller } from "@hotwired/stimulus"
 
 // Connects to data-controller="read-more"
 export default class extends Controller {
-
   static targets = ["content"]
   static values = {
     moreText: String,

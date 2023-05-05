@@ -5,28 +5,28 @@ export default class extends Controller {
   connect() {
   }
    
-  replace (event){
-    event.preventDefault()
-    event.stopPropagation()
+  // replace (event){
+  //   event.preventDefault()
+  //   event.stopPropagation()
 
-    const [, , xhr] = event.detail
-    this.element.outerHTML = xhr.response
-  }
+  //   const [, , xhr] = event.detail
+  //   this.element.outerHTML = xhr.response
+  // }
 
-  append (event){
-    event.preventDefault()
-    event.stopPropagation()
+  // append (event){
+  //   event.preventDefault()
+  //   event.stopPropagation()
 
-    const [, , xhr] = event.detail
-    this.element.insertAdjacentHTML('afterend', xhr.response)
-  }
+  //   const [, , xhr] = event.detail
+  //   this.element.insertAdjacentHTML('afterend', xhr.response)
+  // }
 
-  prepend (event){
-    event.preventDefault()
-    event.stopPropagation()
+  // prepend (event){
+  //   event.preventDefault()
+  //   event.stopPropagation()
 
-    const [, , xhr] = event.detail
+  //   const [, , xhr] = event.detail
 
-    this.element.insertAdjacentHTML('beforebegin', xhr.response)
-  }
+  //   this.element.insertAdjacentHTML('beforebegin', xhr.response)
+  // }
 }

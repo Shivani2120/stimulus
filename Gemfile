@@ -72,3 +72,5 @@ group :test do
 end
 
 gem 'bootstrap', '~> 5.2.2'
+gem 'acts_as_list'
+gem 'whenever', require: false
